@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exp9</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+</head>
+
+<body ng-app="myapp">
+    <div>
+        <div>
+            <a href="#/!">Home</a>
+            <a href="#!urk20cs1145">URK20CS1145</a>
+            <a href="#!urk20cs1165">URK20CS1165</a>
+            <a href="#!urkarun">urkyuva</a>
+        </div>
+        <div ng-view></div>
+    </div>
+
+    <script>
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider.when("/", {
+                template: "home.htm"
+            })
+                .when("/urk20cs1145", {
+                    templateUrl: "urk20cs1145.htm"
+                })
+                .when("/urk20cs1165", {
+                    templateUrl: "urk20cs1165.htm"
+                })
+                .when("/urkarun", {
+                    templateUrl: "urkarun.htm"
+                });
+        });
+
+    </script>
+</body>
+
+</html>
